@@ -1,0 +1,558 @@
+[gd_scene load_steps=10 format=3 uid="uid://7cb3w1va2vtq"]
+
+[ext_resource type="Script" path="res://MainUIPanel.gd" id="1_468tv"]
+[ext_resource type="Script" path="res://2Page.gd" id="3_agnho"]
+[ext_resource type="Script" path="res://1Page.gd" id="3_bndow"]
+[ext_resource type="Script" path="res://3S1Trade.gd" id="4_2q62y"]
+[ext_resource type="Script" path="res://4S2Trade.gd" id="5_ju0ar"]
+[ext_resource type="Script" path="res://5S1Negotiate.gd" id="6_eq811"]
+[ext_resource type="Script" path="res://6S2Negotiate2.gd" id="7_580gh"]
+[ext_resource type="Script" path="res://GameWin.gd" id="8_uhphl"]
+
+[sub_resource type="Theme" id="Theme_ohld5"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="MainUIPanel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_right = 0.266493
+anchor_bottom = 0.279321
+offset_left = 166.0
+offset_top = 92.0
+offset_right = 686.0
+offset_bottom = 356.0
+theme = SubResource("Theme_ohld5")
+script = ExtResource("1_468tv")
+metadata/_edit_use_anchors_ = true
+
+[node name="0Page" type="Panel" parent="MainUIPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0326481
+anchor_top = 0.0539326
+anchor_right = 0.340992
+anchor_bottom = 0.341573
+offset_left = 26.0
+offset_top = 10.0
+offset_right = 487.0
+offset_bottom = 254.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SellersInfo" type="Label" parent="MainUIPanel/0Page"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0377095
+anchor_top = 0.0591398
+anchor_right = 0.972067
+anchor_bottom = 1.06452
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -17.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Welcome to the Electricity Market in our town!
+
+There are two electricity sellers on the market. They both have the ability to provide enough electricity for your needs, but they have different pricing strategies.
+
+You need to bargain with them and aim to achieve the lowest transaction price."
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LeaveButton" type="Button" parent="MainUIPanel/0Page"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.136872
+anchor_top = 0.298387
+anchor_right = 0.136872
+anchor_bottom = 0.305454
+offset_left = 75.0
+offset_top = 184.0
+offset_right = 137.0
+offset_bottom = 213.0
+text = "Leave"
+metadata/_edit_use_anchors_ = true
+
+[node name="NextButton" type="Button" parent="MainUIPanel/0Page"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23324
+anchor_top = 0.303763
+anchor_right = 0.23324
+anchor_bottom = 0.303763
+offset_left = 286.0
+offset_top = 183.0
+offset_right = 338.0
+offset_bottom = 215.0
+text = "Next"
+metadata/_edit_use_anchors_ = true
+
+[node name="1Page" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 32.0
+offset_right = 769.0
+offset_bottom = 410.0
+script = ExtResource("3_bndow")
+
+[node name="Label" type="Label" parent="MainUIPanel/1Page"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 37.0
+offset_right = 663.0
+offset_bottom = 317.0
+text = "Seller 1 is a traditional thrmal power plant with a cost price of $3 per kWh. But it is very greedy and offers a price of $6 per kWh.
+
+Seller 2 is a renewable energy power plant with a higher cost of $4 per kWh. In order to open up the market, the price is $5 per kWh.
+
+Both sellers accept negotiation. If the competitor's price is the same or lower, they are willing to reduce the price by $1. But the minimum cannot be lower than the cost price."
+autowrap_mode = 3
+
+[node name="BackButton" type="Button" parent="MainUIPanel/1Page"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 299.0
+offset_right = 236.0
+offset_bottom = 330.0
+text = "Back"
+
+[node name="NextButton" type="Button" parent="MainUIPanel/1Page"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 298.0
+offset_right = 505.0
+offset_bottom = 330.0
+text = "Start"
+
+[node name="2Page" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 769.0
+offset_bottom = 406.0
+script = ExtResource("3_agnho")
+
+[node name="S1Price" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.225
+anchor_top = -0.425
+anchor_right = -2.225
+anchor_bottom = -0.425
+offset_left = 1696.42
+offset_top = 237.25
+offset_right = 1853.42
+offset_bottom = 327.25
+
+[node name="S2Price" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 84.0
+offset_right = 590.0
+offset_bottom = 171.0
+
+[node name="TradingStatus" type="Label" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 195.0
+offset_right = 487.0
+offset_bottom = 279.0
+text = "Transaction Status: Not traded
+Trading price:  ???  cents/kWh"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 29.0
+offset_right = 502.0
+offset_bottom = 52.0
+text = "Please choose one seller by click  to talk."
+
+[node name="BackButton" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 293.0
+offset_right = 516.0
+offset_bottom = 327.0
+text = "Back"
+
+[node name="Restart" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 295.0
+offset_right = 236.0
+offset_bottom = 326.0
+text = "Restart"
+
+[node name="Feedback" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 101.0
+offset_right = 467.0
+offset_bottom = 178.0
+text = "It’s not the lowest price yet~ 
+
+Try it again!"
+
+[node name="Celebration" type="Button" parent="MainUIPanel/2Page"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 99.0
+offset_right = 502.0
+offset_bottom = 176.0
+text = "Bargaining successful! 
+
+Congratulations!"
+
+[node name="3S1Trade" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 32.0
+offset_right = 766.0
+offset_bottom = 405.0
+script = ExtResource("4_2q62y")
+
+[node name="Nego1" type="Button" parent="MainUIPanel/3S1Trade"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.347
+anchor_top = -0.539
+anchor_right = -0.347
+anchor_bottom = -0.539
+offset_left = 739.717
+offset_top = 498.047
+offset_right = 823.717
+offset_bottom = 530.047
+text = "Negotiate"
+
+[node name="Buy1" type="Button" parent="MainUIPanel/3S1Trade"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 294.0
+offset_right = 369.0
+offset_bottom = 335.0
+text = "Buy"
+
+[node name="Seller1Info" type="Label" parent="MainUIPanel/3S1Trade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 31.0
+offset_right = -63.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+Seller 1 is a traditional thrmal power plant with a cost price of $3 per kWh. But it is very greedy and offers an  initial price of $6 per kWh. 
+
+You can choose to buy directly with Seller 1 at the current price, or negotiate. 
+
+If their competitor's price is the same or lower, they are willing to reduce the price by $1. But the minimum cannot be lower than the cost price."
+autowrap_mode = 2
+
+[node name="Back" type="Button" parent="MainUIPanel/3S1Trade"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 298.0
+offset_right = 194.0
+offset_bottom = 329.0
+text = "Back"
+
+[node name="4S2Trade" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 57.0
+offset_top = 33.0
+offset_right = 765.0
+offset_bottom = 407.0
+script = ExtResource("5_ju0ar")
+
+[node name="Nego2" type="Button" parent="MainUIPanel/4S2Trade"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.347
+anchor_top = -0.539
+anchor_right = -0.347
+anchor_bottom = -0.539
+offset_left = 736.676
+offset_top = 495.586
+offset_right = 820.676
+offset_bottom = 527.586
+text = "Negotiate"
+
+[node name="Buy2" type="Button" parent="MainUIPanel/4S2Trade"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 293.0
+offset_right = 368.0
+offset_bottom = 334.0
+text = "Buy"
+
+[node name="Seller2Info" type="Label" parent="MainUIPanel/4S2Trade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -22.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Seller 2 is a renewable energy power plant. Uncertainty in solar and wind resources requires the use of additional energy storage, resulting in a higher electricity production cost of $4 per kilowatt-hour. But in order to open up the market, Seller 2 set an initial price of $5 per kilowatt hour.
+
+You can choose to buy directly with Seller 2 at the current price, or negotiate. 
+
+If their competitor's price is the same or lower, they are willing to reduce the price by $1. But the minimum cannot be lower than the cost price."
+autowrap_mode = 2
+
+[node name="Back" type="Button" parent="MainUIPanel/4S2Trade"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 295.0
+offset_right = 192.0
+offset_bottom = 326.0
+text = "Back"
+
+[node name="5S1Negotiate" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 61.0
+offset_top = 31.0
+offset_right = 767.0
+offset_bottom = 407.0
+script = ExtResource("6_eq811")
+
+[node name="Player" type="Label" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 34.0
+offset_right = 667.0
+offset_bottom = 124.0
+text = "YOU:
+ \"I think your selling price is too high. If you lower the price, I may be willing to buy from you. Otherwise I will go to your competitor.\""
+autowrap_mode = 3
+
+[node name="SellerAgree" type="Label" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 136.0
+offset_right = 667.0
+offset_bottom = 209.0
+text = "Seller 1 agreed to lower the price:
+\"Okay, we are willing to lower the price by $1 to improve our competitiveness and hope you will buy it ~\""
+autowrap_mode = 3
+
+[node name="SellerRefuse" type="Label" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 139.0
+offset_right = 657.0
+offset_bottom = 213.0
+text = "Seller 1 refused to lower the price:
+\"No, we are already at the lowest price in the market. If you don't want to buy, see you next time.\"."
+autowrap_mode = 3
+
+[node name="CostRefuse" type="Label" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 141.0
+offset_right = 678.0
+offset_bottom = 216.0
+text = "Seller 1 refused to lower the price:
+\"It is already the cost price and cannot be lowered anymore. If you don’t buy it, please leave.”"
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 245.0
+offset_right = 628.0
+offset_bottom = 268.0
+text = "Seller 1's current selling price: "
+
+[node name="NegoBuy1" type="Button" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 299.0
+offset_right = 461.0
+offset_bottom = 330.0
+text = "Buy"
+
+[node name="Back" type="Button" parent="MainUIPanel/5S1Negotiate"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 301.0
+offset_right = 287.0
+offset_bottom = 332.0
+text = "Back"
+
+[node name="6S2Negotiate2" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 31.0
+offset_right = 766.0
+offset_bottom = 408.0
+script = ExtResource("7_580gh")
+
+[node name="Player" type="Label" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 35.0
+offset_right = 663.0
+offset_bottom = 117.0
+text = "YOU:
+ \"I think your selling price is too high. If you lower the price, I may be willing to buy from you. Otherwise I will go to your competitor.\""
+autowrap_mode = 3
+
+[node name="SellerAgree" type="Label" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 142.0
+offset_right = 647.0
+offset_bottom = 216.0
+text = "Seller 2 agreed to lower the price:
+\"Okay, we are willing to lower the price by $1 to improve our competitiveness and hope you will buy it ~\""
+autowrap_mode = 3
+
+[node name="SellerRefuse" type="Label" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 143.0
+offset_right = 645.0
+offset_bottom = 217.0
+text = "Seller 2 refused to lower the price:
+\"No, we are already at the lowest price in the market. If you don't want to buy, see you next time.\"."
+autowrap_mode = 3
+
+[node name="CostRefuse" type="Label" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 144.0
+offset_right = 649.0
+offset_bottom = 219.0
+text = "Seller 2 refused to lower the price:
+\"It is already the cost price and cannot be lowered anymore. If you don’t buy it, please leave.”"
+autowrap_mode = 2
+
+[node name="Price" type="Label" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 246.0
+offset_right = 164.0
+offset_bottom = 269.0
+text = "Seller 2's current selling price: "
+
+[node name="NegoBuy2" type="Button" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 299.0
+offset_right = 458.0
+offset_bottom = 330.0
+text = "Buy"
+
+[node name="Back" type="Button" parent="MainUIPanel/6S2Negotiate2"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 300.0
+offset_right = 283.0
+offset_bottom = 331.0
+text = "Back"
+
+[node name="GameFeedback" type="Panel" parent="MainUIPanel"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 31.0
+offset_right = 770.0
+offset_bottom = 409.0
+script = ExtResource("8_uhphl")
+
+[node name="Sucess" type="Label" parent="MainUIPanel/GameFeedback"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 35.0
+offset_right = 677.0
+offset_bottom = 278.0
+text = "Congratulations on winning the game!!!
+
+In this game, YOU, as the only buyer, negotiated repeatedly with two sellers to finally obtain the lowest possible price. This is a simulation:
+For the sellers, it's a \"Duopoly\" market.
+For the buyer, it's a \"Monopsony\" market.
+
+In the end, there is always a seller who is unable to sell electricity, which often results in the interests of sellers in the market being harmed, while the buyer gain more surplus. 
+
+What happens if there are more buyers? 
+What would happen if it were a perfectly competitive market?"
+autowrap_mode = 1
+
+[node name="Fail" type="Label" parent="MainUIPanel/GameFeedback"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 110.0
+offset_right = 530.0
+offset_bottom = 259.0
+text = "Unfortunately~
+YOU have not reached 
+the lowest transaction price yet. 
+
+Go back and continue to negotiate!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Leave" type="Button" parent="MainUIPanel/GameFeedback"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 378.0
+offset_right = 239.0
+offset_bottom = 414.0
+text = "Leave"
+
+[node name="Back" type="Button" parent="MainUIPanel/GameFeedback"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 379.0
+offset_right = 479.0
+offset_bottom = 410.0
+text = "Continue"
+
+[connection signal="pressed" from="MainUIPanel/0Page/LeaveButton" to="MainUIPanel" method="_on_leave_button_pressed"]
+[connection signal="pressed" from="MainUIPanel/0Page/NextButton" to="MainUIPanel" method="_on_next_button_pressed"]
+[connection signal="pressed" from="MainUIPanel/1Page/BackButton" to="MainUIPanel/1Page" method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainUIPanel/1Page/NextButton" to="MainUIPanel/1Page" method="_on_next_button_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/S1Price" to="MainUIPanel/2Page" method="_on_s_1_price_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/S2Price" to="MainUIPanel/2Page" method="_on_s_2_price_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/BackButton" to="MainUIPanel/2Page" method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/Restart" to="MainUIPanel/2Page" method="_on_restart_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/Feedback" to="MainUIPanel/GameFeedback" method="_on_feedback_pressed"]
+[connection signal="pressed" from="MainUIPanel/2Page/Celebration" to="MainUIPanel/GameFeedback" method="_on_celebration_pressed"]
+[connection signal="tradeS1_update" from="MainUIPanel/3S1Trade" to="MainUIPanel/2Page" method="_on_s_1_trade_trade_s_1_update"]
+[connection signal="pressed" from="MainUIPanel/3S1Trade/Nego1" to="MainUIPanel/2Page" method="_on_nego_1_pressed"]
+[connection signal="pressed" from="MainUIPanel/3S1Trade/Nego1" to="MainUIPanel/3S1Trade" method="_on_nego_1_pressed"]
+[connection signal="pressed" from="MainUIPanel/3S1Trade/Nego1" to="MainUIPanel/5S1Negotiate" method="_on_nego_1_pressed"]
+[connection signal="pressed" from="MainUIPanel/3S1Trade/Buy1" to="MainUIPanel/3S1Trade" method="_on_buy_1_pressed"]
+[connection signal="pressed" from="MainUIPanel/3S1Trade/Back" to="MainUIPanel/3S1Trade" method="_on_back_pressed"]
+[connection signal="tradeS2_update" from="MainUIPanel/4S2Trade" to="MainUIPanel/2Page" method="_on_s_2_trade_trade_s_2_update"]
+[connection signal="pressed" from="MainUIPanel/4S2Trade/Nego2" to="MainUIPanel/4S2Trade" method="_on_nego_2_pressed"]
+[connection signal="pressed" from="MainUIPanel/4S2Trade/Nego2" to="MainUIPanel/6S2Negotiate2" method="_on_nego_2_pressed"]
+[connection signal="pressed" from="MainUIPanel/4S2Trade/Buy2" to="MainUIPanel/4S2Trade" method="_on_buy_2_pressed"]
+[connection signal="pressed" from="MainUIPanel/4S2Trade/Back" to="MainUIPanel/4S2Trade" method="_on_back_pressed"]
+[connection signal="price1_update" from="MainUIPanel/5S1Negotiate" to="MainUIPanel/2Page" method="_on_s_1_negotiate_price_1_update"]
+[connection signal="tradeS1_nego_update" from="MainUIPanel/5S1Negotiate" to="MainUIPanel/2Page" method="_on_s_1_negotiate_trade_s_1_nego_update"]
+[connection signal="pressed" from="MainUIPanel/5S1Negotiate/NegoBuy1" to="MainUIPanel/5S1Negotiate" method="_on_nego_buy_1_pressed"]
+[connection signal="pressed" from="MainUIPanel/5S1Negotiate/Back" to="MainUIPanel/5S1Negotiate" method="_on_back_pressed"]
+[connection signal="price2_update" from="MainUIPanel/6S2Negotiate2" to="MainUIPanel/2Page" method="_on_s_2_negotiate_2_price_2_update"]
+[connection signal="tradeS2_nego_update" from="MainUIPanel/6S2Negotiate2" to="MainUIPanel/2Page" method="_on_s_2_negotiate_2_trade_s_2_nego_update"]
+[connection signal="pressed" from="MainUIPanel/6S2Negotiate2/NegoBuy2" to="MainUIPanel/6S2Negotiate2" method="_on_nego_buy_2_pressed"]
+[connection signal="pressed" from="MainUIPanel/6S2Negotiate2/Back" to="MainUIPanel/6S2Negotiate2" method="_on_back_pressed"]
+[connection signal="pressed" from="MainUIPanel/GameFeedback/Leave" to="MainUIPanel/GameFeedback" method="_on_leave_pressed"]
+[connection signal="pressed" from="MainUIPanel/GameFeedback/Back" to="MainUIPanel/GameFeedback" method="_on_back_pressed"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=15 format=3 uid="uid://bol1l8370dsja"]
+
+[ext_resource type="PackedScene" uid="uid://coe7nqbwvcxdu" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_H.gltf" id="1_jnsw6"]
+[ext_resource type="Texture2D" uid="uid://bwcuyt3jr2eax" path="res://GuessThePrice/MarketTitle.png" id="2_cfrxg"]
+[ext_resource type="Shader" path="res://MarketBuikding2.gdshader" id="2_q121b"]
+[ext_resource type="Shader" path="res://MarketBuikding.gdshader" id="3_jt3ll"]
+[ext_resource type="Texture2D" uid="uid://ckmi21ycjgu5x" path="res://GuessThePrice/CURVE.png" id="5_8byj7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jc4m0"]
+render_priority = 0
+shader = ExtResource("2_q121b")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0x7vt"]
+material = SubResource("ShaderMaterial_jc4m0")
+size = Vector2(3.1, 1)
+
+[sub_resource type="Skin" id="Skin_rarje"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3lwrf"]
+albedo_color = Color(0.929412, 1, 1, 1)
+albedo_texture = ExtResource("2_cfrxg")
+clearcoat = 0.0
+backlight_enabled = true
+
+[sub_resource type="TextMesh" id="TextMesh_uw215"]
+resource_local_to_scene = true
+lightmap_size_hint = Vector2i(4, 0)
+custom_aabb = AABB(0, 0, 0, 1, 2, 0)
+flip_faces = true
+add_uv2 = true
+uv2_padding = 4.33
+text = "ELECTRICITY 
+PRICE
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_218ip"]
+render_priority = 0
+shader = ExtResource("3_jt3ll")
+
+[sub_resource type="TextMesh" id="TextMesh_ok7xn"]
+material = SubResource("ShaderMaterial_218ip")
+text = "Market Open"
+font_size = 13
+
+[sub_resource type="QuadMesh" id="QuadMesh_xr5it"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_245ir"]
+albedo_texture = ExtResource("5_8byj7")
+
+[node name="building_H2" instance=ExtResource("1_jnsw6")]
+
+[node name="building_H" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016255, 0)
+layers = 6
+gi_lightmap_scale = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="building_H" index="0"]
+transform = Transform3D(1.06007, 0, 0, 0, 1.44094, 0, 0, 0, 1.00065, -0.652297, 1.56061, 0.653875)
+mesh = SubResource("QuadMesh_0x7vt")
+skin = SubResource("Skin_rarje")
+surface_material_override/0 = SubResource("StandardMaterial3D_3lwrf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="building_H" index="1"]
+transform = Transform3D(0.0227859, -0.122747, 1.00547, -1.91903, -0.0180893, 0.0114699, 0.0152391, -2.09443, -0.0590263, 1.0675, 1.22405, -0.0836911)
+gi_mode = 2
+gi_lightmap_scale = 1
+mesh = SubResource("TextMesh_uw215")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="building_H" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.387815, 0.734563, 0.633567)
+mesh = SubResource("TextMesh_ok7xn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="building_H" index="3"]
+transform = Transform3D(0.4, 0, 0, 0, 0.36, 0, 0, 0, 0.4, -0.729485, 0.42, 0.645)
+mesh = SubResource("QuadMesh_xr5it")
+surface_material_override/0 = SubResource("StandardMaterial3D_245ir")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.450772, 2.22141, 1.16344)
+light_energy = 1.233
+sky_mode = 1

@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmeqndgywregf"]
+
+[ext_resource type="PackedScene" uid="uid://cnm1krti1jdvc" path="res://GuessThePrice/Background.tscn" id="1_te2il"]
+[ext_resource type="PackedScene" uid="uid://dmnq283pf7olr" path="res://GuessThePrice/Player.tscn" id="2_7wvfb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjl3k"]
+size = Vector3(3.12386, 2.81665, 1.92676)
+
+[node name="Main" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.96917, 2)
+light_energy = 0.989
+light_indirect_energy = 2.164
+light_volumetric_fog_energy = 0.942
+light_angular_distance = 26.18
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_7wvfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30482, 0.355933, 8.05784)
+collision_mask = 6
+
+[node name="Background" parent="." instance=ExtResource("1_te2il")]
+
+[node name="market" type="StaticBody3D" parent="." groups=["market"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="Area3D" type="Area3D" parent="market"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="market/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599403, 1.64729, 1.22413)
+shape = SubResource("BoxShape3D_bjl3k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="market"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599403, 1.64729, 1.22413)
+shape = SubResource("BoxShape3D_bjl3k")
+
+[node name="PriceInputInterface" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PriceInputInterface"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 31.0
+offset_right = 413.0
+offset_bottom = 168.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PriceInputInterface/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnterPrice" type="Label" parent="PriceInputInterface/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Please enter your guessed price"
+
+[node name="LineEdit" type="LineEdit" parent="PriceInputInterface/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Confirm" type="Button" parent="PriceInputInterface/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Confirm"
+
+[node name="Cancel" type="Button" parent="PriceInputInterface/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Cancel"

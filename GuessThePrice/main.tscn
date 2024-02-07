@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmeqndgywregf"]
+
+[ext_resource type="PackedScene" uid="uid://cnm1krti1jdvc" path="res://GuessThePrice/Background.tscn" id="1_te2il"]
+[ext_resource type="PackedScene" uid="uid://dmnq283pf7olr" path="res://GuessThePrice/Player.tscn" id="2_7wvfb"]
+[ext_resource type="PackedScene" uid="uid://7cb3w1va2vtq" path="res://UI.tscn" id="6_y6mqh"]
+[ext_resource type="Script" path="res://GuessThePrice/Welcome.gd" id="7_hq8dl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjl3k"]
+size = Vector3(3.12386, 2.81665, 1.92676)
+
+[sub_resource type="Theme" id="Theme_moc6j"]
+
+[node name="Main" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.96917, 2)
+light_energy = 0.989
+light_indirect_energy = 2.164
+light_volumetric_fog_energy = 0.942
+light_angular_distance = 26.18
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_7wvfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30482, 0.399948, 8.05784)
+collision_mask = 6
+
+[node name="Background" parent="." instance=ExtResource("1_te2il")]
+
+[node name="MarketBuilding" type="StaticBody3D" parent="." groups=["market"]]
+collision_layer = 2
+collision_mask = 5
+
+[node name="Area3D" type="Area3D" parent="MarketBuilding"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MarketBuilding/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599403, 1.64729, 1.22413)
+shape = SubResource("BoxShape3D_bjl3k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MarketBuilding"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599403, 1.64729, 1.22413)
+shape = SubResource("BoxShape3D_bjl3k")
+
+[node name="Welcome" type="Panel" parent="."]
+offset_left = 300.0
+offset_top = 161.0
+offset_right = 870.0
+offset_bottom = 496.0
+script = ExtResource("7_hq8dl")
+
+[node name="Instructions" type="Label" parent="Welcome"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 25.0
+offset_right = 525.0
+offset_bottom = 287.0
+theme = SubResource("Theme_moc6j")
+text = "Explore the world~
+Find the Electicity Market and trade.
+
+Instructions:
+1. The direction keys: 
+\"UP\", \"DOWN\", \"LEFT\" and \"RIGHT\" 
+are used to move.
+2. The letter keys \"H\" and \"L\" 
+are used to fly and land."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="UI" parent="." instance=ExtResource("6_y6mqh")]
+visible = false
+
+[editable path="Player"]

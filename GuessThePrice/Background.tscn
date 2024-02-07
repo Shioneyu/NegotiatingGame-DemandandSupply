@@ -1,0 +1,151 @@
+[gd_scene load_steps=23 format=3 uid="uid://cnm1krti1jdvc"]
+
+[ext_resource type="PackedScene" uid="uid://l3dlo18y1ta8" path="res://GuessThePrice/small_building.tscn" id="1_xfkmm"]
+[ext_resource type="PackedScene" uid="uid://bgh53mypf2tjk" path="res://GuessThePrice/Ground.tscn" id="2_r6unt"]
+[ext_resource type="PackedScene" uid="uid://dlxnqw02gxsj6" path="res://GuessThePrice/building_2.tscn" id="3_fsgwo"]
+[ext_resource type="PackedScene" uid="uid://c3pm80o0vmuju" path="res://addons/kaykit_city_builder_bits/Assets/gltf/road_straight.gltf" id="4_bibln"]
+[ext_resource type="PackedScene" uid="uid://k6i1bt7w5r5e" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_F.gltf" id="6_8ih3u"]
+[ext_resource type="PackedScene" uid="uid://1rkvkh3fx3an" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_C.gltf" id="7_s4jer"]
+[ext_resource type="PackedScene" uid="uid://hf0lmtwqvf15" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_taxi.gltf" id="8_7tw3o"]
+[ext_resource type="PackedScene" uid="uid://we02te3brdqs" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_sedan.gltf" id="9_sb44l"]
+[ext_resource type="PackedScene" uid="uid://d1lxe5l2p7cvq" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_hatchback.gltf" id="11_xi02w"]
+[ext_resource type="PackedScene" uid="uid://xg1x8ls8ryeo" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_stationwagon.gltf" id="12_lm28y"]
+[ext_resource type="PackedScene" uid="uid://dh8vtyk08vgsi" path="res://addons/kaykit_city_builder_bits/Assets/gltf/trafficlight_C.gltf" id="13_tlphb"]
+[ext_resource type="PackedScene" uid="uid://c8mxxmjtea1j2" path="res://addons/kaykit_city_builder_bits/Assets/gltf/trafficlight_A.gltf" id="14_c4xr0"]
+[ext_resource type="PackedScene" uid="uid://rjlequdw084y" path="res://addons/kaykit_city_builder_bits/Assets/gltf/trafficlight_B.gltf" id="15_e6ofd"]
+[ext_resource type="PackedScene" uid="uid://dermvuhuhphof" path="res://addons/kaykit_space_base_bits/Assets/gltf/roofmodule_cargo_C.gltf" id="16_n4pix"]
+[ext_resource type="PackedScene" uid="uid://bprie6bn35qgu" path="res://addons/kaykit_space_base_bits/Assets/gltf/roofmodule_solarpanels.gltf" id="17_o51vs"]
+[ext_resource type="PackedScene" uid="uid://ds7ib1t55m1kt" path="res://addons/kaykit_space_base_bits/Assets/gltf/solarpanel.gltf" id="18_1tqqf"]
+[ext_resource type="PackedScene" uid="uid://bplgdyb63x5xo" path="res://addons/kaykit_space_base_bits/Assets/gltf/windturbine_low.gltf" id="19_rl6cq"]
+[ext_resource type="PackedScene" uid="uid://dj1f6v0kq0own" path="res://addons/kaykit_space_base_bits/Assets/gltf/windturbine_tall.gltf" id="20_ouood"]
+[ext_resource type="PackedScene" uid="uid://dvoly40rqmo7c" path="res://addons/kaykit_halloween_bits/Assets/gltf/pumpkin_yellow_small.gltf" id="21_5hgel"]
+[ext_resource type="PackedScene" uid="uid://dmi4gdmxj0s54" path="res://addons/kaykit_city_builder_bits/Assets/gltf/watertower.gltf" id="21_8eo7k"]
+[ext_resource type="PackedScene" uid="uid://bol1l8370dsja" path="res://MarketBuilding.tscn" id="22_nupjl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hbps"]
+size = Vector3(1.26404, 1.30383, 1.48045)
+
+[node name="Background" type="Node3D"]
+
+[node name="SmallBuilding" parent="." instance=ExtResource("1_xfkmm")]
+transform = Transform3D(0.999986, 0, 0.00521848, 0, 1, 0, -0.00521848, 0, 0.999986, 0.320048, 0, 4.79942)
+
+[node name="Ground" parent="." instance=ExtResource("2_r6unt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.870625, 0, -0.570134)
+
+[node name="Building3" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.7402, 0, -0.285753)
+
+[node name="Building5" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.69492, 0, -6.26298)
+
+[node name="Building6" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.69559, 0, -2.14298)
+
+[node name="SmallBuilding4" parent="." instance=ExtResource("1_xfkmm")]
+transform = Transform3D(0.999924, 0, 0.0123216, 0, 1, 0, -0.0123216, 0, 0.999924, -4.80067, 0, 4.98684)
+
+[node name="SmallBuilding5" parent="." instance=ExtResource("1_xfkmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05154, 0, 4.92723)
+
+[node name="road_straight2" parent="." instance=ExtResource("4_bibln")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.78813, 0, 3.39141)
+
+[node name="building_F2" parent="." instance=ExtResource("6_8ih3u")]
+transform = Transform3D(0.00752234, 0, 0.999972, 0, 1, 0, -0.999972, 0, 0.00752234, 0.124394, 0, -0.49489)
+
+[node name="building_C2" parent="." instance=ExtResource("7_s4jer")]
+transform = Transform3D(1, 0, 0.000733018, 0, 1, 0, -0.000733018, 0, 1, -1.78453, 0, 1.11)
+
+[node name="car_taxi2" parent="." instance=ExtResource("8_7tw3o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.50565, 0.233111, 2.96576)
+
+[node name="car_sedan2" parent="." instance=ExtResource("9_sb44l")]
+transform = Transform3D(-0.999976, 0, 0.00687662, 0, 1, 0, -0.00687662, 0, -0.999976, 2.52005, 0.168019, 4.54848)
+
+[node name="car_hatchback2" parent="." instance=ExtResource("11_xi02w")]
+transform = Transform3D(0.0337133, 0, 0.999432, 0, 1, 0, -0.999432, 0, 0.0337133, -3.54496, 0.130742, 3.52061)
+
+[node name="car_stationwagon2" parent="." instance=ExtResource("12_lm28y")]
+transform = Transform3D(-0.999989, 0, 0.00460775, 0, 1, 0, -0.00460775, 0, -0.999989, 2.51364, 0.135947, -0.290652)
+
+[node name="car_taxi3" parent="." instance=ExtResource("8_7tw3o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.39063, 0.137349, 2.9486)
+
+[node name="trafficlight_C2" parent="." instance=ExtResource("13_tlphb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.20718, 0, 4.52392)
+
+[node name="trafficlight_C3" parent="." instance=ExtResource("13_tlphb")]
+transform = Transform3D(-0.999987, 0, 0.00500912, 0, 1, 0, -0.00500912, 0, -0.999987, 0.994486, 0, 4.44577)
+
+[node name="trafficlight_C4" parent="." instance=ExtResource("13_tlphb")]
+transform = Transform3D(0.999997, 0, 0.00237357, 0, 1, 0, -0.00237357, 0, 0.999997, 3.24811, 0, 2.07884)
+
+[node name="trafficlight_C5" parent="." instance=ExtResource("13_tlphb")]
+transform = Transform3D(-0.00108205, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00108205, 1.00013, 0, 2.1792)
+
+[node name="trafficlight_A2" parent="." instance=ExtResource("14_c4xr0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.55851, 2.38419e-07, 4.4878)
+
+[node name="trafficlight_B2" parent="." instance=ExtResource("15_e6ofd")]
+transform = Transform3D(0.00186749, 0, 0.999998, 0, 1, 0, -0.999998, 0, 0.00186749, 1.0586, 0, 1.83021)
+
+[node name="Building2" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, -2.01056, -9.53674e-07, -4.7558)
+
+[node name="Building4" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.83433, 0, -4.0053)
+
+[node name="Building7" parent="." instance=ExtResource("3_fsgwo")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.84454, 0, -0.440793)
+
+[node name="roofmodule_cargo_C2" parent="." instance=ExtResource("16_n4pix")]
+transform = Transform3D(0.000244335, 0, 1, 0, 1, 0, -1, 0, 0.000244335, 5.11216, 0.210342, 5.34415)
+
+[node name="Area3D" type="Area3D" parent="roofmodule_cargo_C2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="roofmodule_cargo_C2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16562, 0.540489, -0.067965)
+shape = SubResource("BoxShape3D_1hbps")
+
+[node name="roofmodule_solarpanels2" parent="." instance=ExtResource("17_o51vs")]
+transform = Transform3D(-0.00937229, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00937229, 0.132564, 2.43559, -0.567909)
+
+[node name="solarpanel2" parent="." instance=ExtResource("18_1tqqf")]
+transform = Transform3D(0.034795, 0, 0.999394, 0, 1, 0, -0.999394, 0, 0.034795, 0.406604, 3.03114, 1.12462)
+
+[node name="solarpanel2" parent="solarpanel2" instance=ExtResource("18_1tqqf")]
+transform = Transform3D(0.999527, 0, 0.0307653, 0, 1, 0, -0.0307653, 0, 0.999527, -0.0179067, -0.118223, -0.527886)
+
+[node name="windturbine_low2" parent="." instance=ExtResource("19_rl6cq")]
+transform = Transform3D(-5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, -5.27722, 0.0832888, -4.61285)
+
+[node name="windturbine_tall3" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.678926, 0.0141631, -1.33748, 0.00641076, 1.49993, 0.0126292, 1.33754, 0, -0.678956, -5.63598, 0, -2.70047)
+
+[node name="windturbine_tall4" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.580139, 0, -1.38327, 0, 1.5, 0, 1.38327, 0, -0.580139, -5.6577, 0, -0.447071)
+
+[node name="windturbine_tall5" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.178672, 0, -1.48932, 0, 1.5, 0, 1.48932, 0, -0.178672, -5.74161, 0, 1.5386)
+
+[node name="windturbine_tall6" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.803652, 0, -1.26655, 0, 1.5, 0, 1.26655, 0, -0.803652, -3.04793, 0, -4.80904)
+
+[node name="windturbine_tall7" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.79641, 0, -1.27111, 0, 1.5, 0, 1.27111, 0, -0.79641, 0.959291, 0, -4.86662)
+
+[node name="windturbine_tall8" parent="." instance=ExtResource("20_ouood")]
+transform = Transform3D(-0.650088, 0, -1.35181, 0, 1.5, 0, 1.35181, 0, -0.650088, -1.01627, 0, -4.88821)
+
+[node name="watertower2" parent="." instance=ExtResource("21_8eo7k")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.93698, 0, -2.43988)
+
+[node name="watertower5" parent="." instance=ExtResource("21_8eo7k")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.51649, 0, -4.81289)
+
+[node name="MarketBuilding" parent="." instance=ExtResource("22_nupjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172645, 0, 1.11)
+
+[node name="pumpkin_yellow_small2" parent="." instance=ExtResource("21_5hgel")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.59723, 0, -0.592429)

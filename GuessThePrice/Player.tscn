@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmnq283pf7olr"]
+
+[ext_resource type="PackedScene" uid="uid://crk1wmcjj5etn" path="res://addons/kaykit_halloween_bits/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="1_c8pce"]
+[ext_resource type="Script" path="res://GuessThePrice/Player.gd" id="1_o2ad1"]
+[ext_resource type="Script" path="res://GuessThePrice/Camera3D.gd" id="3_ogxla"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_unnvw"]
+radius = 0.902013
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 5
+script = ExtResource("1_o2ad1")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Character" parent="Pivot" instance=ExtResource("1_c8pce")]
+transform = Transform3D(0.099649, 0, 0, 0, 0.099649, 0, 0, 0, 0.099649, 0, 0.0299506, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.09, 0, 0, 0, 0.09, 0, 0, 0, 0.09, -0.0023224, 0.0644097, 0.000294968)
+shape = SubResource("SphereShape3D_unnvw")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.173783, 0)
+visible = false
+script = ExtResource("3_ogxla")

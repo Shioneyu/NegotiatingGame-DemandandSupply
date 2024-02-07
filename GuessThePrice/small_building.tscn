@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3dlo18y1ta8"]
+
+[ext_resource type="PackedScene" uid="uid://jkcuxkale341" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_A.gltf" id="1_vh138"]
+[ext_resource type="PackedScene" uid="uid://ds7ib1t55m1kt" path="res://addons/kaykit_space_base_bits/Assets/gltf/solarpanel.gltf" id="2_x4r83"]
+
+[node name="SmallBuilding" type="Node3D"]
+transform = Transform3D(-0.00272266, 0, 0.999996, 0, 1, 0, -0.999996, 0, -0.00272266, 0, 0, 0)
+
+[node name="building_A2" parent="." instance=ExtResource("1_vh138")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0035243, 0, 1.05172)
+
+[node name="solarpanel2" parent="." instance=ExtResource("2_x4r83")]
+transform = Transform3D(-0.00570717, 0, 0.999984, 0, 1, 0, -0.999984, 0, -0.00570717, -0.277752, 1.57423, 1.03594)
+
+[node name="solarpanel3" parent="." instance=ExtResource("2_x4r83")]
+transform = Transform3D(0.00270529, 0, 0.999996, 0, 1, 0, -0.999996, 0, 0.00270529, 0.234009, 1.59634, 1.04732)
